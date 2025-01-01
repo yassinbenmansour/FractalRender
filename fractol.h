@@ -6,12 +6,14 @@
 /*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:33:30 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/01 04:38:59 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/01 05:45:54 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
+
+# include "mlx/mlx.h"
 
 # include <math.h>
 # include <stdio.h>
@@ -37,7 +39,7 @@ typedef struct s_var
 	double	bb;     // Carré de la partie imaginaire (optimisation).
 	double	a_r;    // Partie réelle de la constante utilisée dans Julia (ou d'autres fractales).
 	double	b_r;    // Partie imaginaire de la constante utilisée dans Julia (ou d'autres fractales).
-	int		num_ieration; // Nombre d'itérations effectuées pour un point.
+	int		num_iteration; // Nombre d'itérations effectuées pour un point.
 } t_var;
 
 typedef struct s_fractol
@@ -49,11 +51,10 @@ typedef struct s_fractol
 	double	zoom;
 	double	ox;
 	double	oy;
-	int		max_it;
+	int		max_iteration;
 	int		color;
 	int		color_code;
 	int		julia;
-	int		julia_move;
 }            t_fractol;
 
 
@@ -63,6 +64,14 @@ int		ft_atoi(char *num);
 double	ft_map(int in, double min, double max);
 void	ft_init(t_fractol *fractol, int number);
 double	ft_atof(char *str, double res);
+void	ft_pre_cal(t_fractol *fractol, int x, int y);
+void	ft_calculater(t_fractol *fractol);
+void	ft_mlx_pixel_put(t_fractol fractol, int x, int y, int color);
+void	ft_draw(t_fractol fractol);
+int	ft_key_hook(int keycode, void *param);
+void	ft_get_color(t_fractol *fractol);
+int	ft_mouse_hook(int button, int x, int y, void *param);
+int			ft_mouse_hook(int button, int x, int y, void *param);
 
 
 
