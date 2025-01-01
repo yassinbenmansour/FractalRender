@@ -6,7 +6,7 @@
 /*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:33:30 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/01 03:42:30 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:38:59 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define WIDTH 800
+# define HEIGHT 800
 typedef struct s_image
 {
 	void	*img_ptr;
@@ -52,8 +54,16 @@ typedef struct s_fractol
 	int		color_code;
 	int		julia;
 	int		julia_move;
-	int		burning_ship;
 }            t_fractol;
+
+
+void	ft_instructions(void);
+int		ft_close(t_fractol *fractol);
+int		ft_atoi(char *num);
+double	ft_map(int in, double min, double max);
+void	ft_init(t_fractol *fractol, int number);
+double	ft_atof(char *str, double res);
+
 
 
 #endif

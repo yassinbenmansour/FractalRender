@@ -6,7 +6,7 @@
 /*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:47:18 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/01 03:42:48 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/01 04:40:50 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_close(t_fractol *fractol)
 
 void	ft_instructions(void)
 {
-	write(1, "############## INSTRUCTION ##############\n", 43);
+	write(1, "####### INSTRUCTION BY YABENMAN  ########\n", 43);
 	write(1, "#                                       #\n", 43);
 	write(1, "#                                       #\n", 43);
 	write(1, "#               Zoom                    #\n", 43);
