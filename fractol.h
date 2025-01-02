@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yabenman <yabenman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:33:30 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/01 05:45:54 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/02 06:55:07 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 # include "mlx/mlx.h"
 
 # include <math.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-# define WIDTH 800
-# define HEIGHT 800
+# define WIDTH 600
+# define HEIGHT 600
 typedef struct s_image
 {
 	void	*img_ptr;
@@ -72,6 +71,7 @@ int	ft_key_hook(int keycode, void *param);
 void	ft_get_color(t_fractol *fractol);
 int	ft_mouse_hook(int button, int x, int y, void *param);
 int			ft_mouse_hook(int button, int x, int y, void *param);
+void	julia_args(char **av);
 
 
 

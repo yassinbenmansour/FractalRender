@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yabenman <yabenman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:47:18 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/01 04:40:50 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/02 09:48:42 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,7 @@ void	ft_instructions(void)
 	write(1, "#               Zoom                    #\n", 43);
 	write(1, "# mouse buttons - Use them whith julia  #\n", 43);
 	write(1, "#                                       #\n", 43);
-	write(1, "#                                       #\n", 43);
-	write(1, "# r - Reset                             #\n", 43);
-	write(1, "# c - Change Color                      #\n", 43);
-	write(1, "# p - Change fractal                    #\n", 43);
-	write(1, "# z - Increase the max iteration        #\n", 43);
-	write(1, "# n - Decrease the max iteration        #\n", 43);
 	write(1, "# esc | q - Quit                        #\n", 43);
-	write(1, "#                                       #\n", 43);
 	write(1, "#                                       #\n", 43);
 	write(1, "############## INSTRUCTION ##############\n", 43);
 }
@@ -70,8 +63,8 @@ double	ft_atof(char *str, double res)
 	divider = 1;
 	if (str[++i] == '-')
 		sign = -1;
-	while (str[i] && str[i] != '.')
-		res = res * 10 + str[i++] - '0';
+	while (str[++i] && str[i] != '.')
+		res = res * 10 + str[i] - '0';
 	if (str[i++] == '.')
 	{
 		while (str[i])

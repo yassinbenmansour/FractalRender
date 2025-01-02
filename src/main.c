@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yabenman <yabenman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:46:23 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/01 05:47:32 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/02 09:44:43 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 char	*ft_get_title(int number)
 {
 	if (number == 1)
-		return ("FRACTOLL - Mandelbrot by yabenman");
-	else  
-		return ("FRACTOLL - Julia by yabenman");
+		return ("FRACTOL - Mandelbrot by yabenman");
+	else
+		return ("FRACTOL - Julia by yabenman");
 }
 
 void	ft_init(t_fractol *fractol, int number)
 {
 	fractol->cnx = mlx_init();
-	fractol->window = mlx_new_window(fractol->cnx, WIDTH, HEIGHT, ft_get_title(number));
+	fractol->window = mlx_new_window(fractol->cnx, WIDTH, HEIGHT,
+			ft_get_title(number));
 	fractol->max_iteration = 100;
 	fractol->ox = 0;
 	fractol->oy = 0;
@@ -39,43 +40,46 @@ void	ft_init(t_fractol *fractol, int number)
 	fractol->var.b_r = 0.622;
 }
 
-int main(int ac, char **av){
-    t_fractol fractol;
-    int number;
+int	main(int ac, char **av)
+{
+	t_fractol	fractol;
+	int			number;
 
-    if (ac == 2)
-    {
-        number = ft_atoi(av[1]);
-        if(number == 1 || number == 2)
-        {
-            ft_instructions();
-            ft_init(&fractol, number);
+	if (ac == 2)
+	{
+		number = ft_atoi(av[1]);
+		if (number == 1 || number == 2)
+		{
+			ft_instructions();
+			ft_init(&fractol, number);
 			ft_draw(fractol);
 			mlx_key_hook(fractol.window, ft_key_hook, &fractol);
 			mlx_mouse_hook(fractol.window, ft_mouse_hook, &fractol);
 			mlx_hook(fractol.window, 17, 0, ft_close, &fractol);
 			mlx_loop(fractol.cnx);
-
-        }
-        else
-           write(1, "Usage:\t./fractol [1, 2]\n", 28);
-	       write(1, "[1]:\tMandelbrot\n[2]:\tJulia\n", 47);
-    }
-    return (0);
+		}
+	}
+	else if (ac == 4 && ft_atoi(av[1]) == 2)
+	{
+		julia_args(av);
+	}
+	write(1, "Usage:\t./fractol [1, 2]\n\n", 28);
+	write(1, "[1]:\tMandelbrot\n[2]:\tJulia\n", 47);
+	return (0);
 }
-
+#include <stdio.h>
 void	julia_args(char **av)
 {
-	t_fractol	fractol;
+	t_fractol fractol;
 
 	ft_instructions();
 	ft_init(&fractol, 2);
 	fractol.var.a_r = ft_atof(av[2], 0);
 	fractol.var.b_r = ft_atof(av[3], 0);
+	printf("ar_%f\n, br_%f\n",fractol.var.a_r, fractol.var.b_r);
 	ft_draw(fractol);
 	mlx_key_hook(fractol.window, ft_key_hook, &fractol);
 	mlx_mouse_hook(fractol.window, ft_mouse_hook, &fractol);
 	mlx_hook(fractol.window, 17, 0, ft_close, &fractol);
 	mlx_loop(fractol.cnx);
-	
 }
