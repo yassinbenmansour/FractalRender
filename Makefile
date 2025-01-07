@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+         #
+#    By: yabenman <yabenman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/01 02:33:32 by yabenman          #+#    #+#              #
-#    Updated: 2025/01/01 05:37:08 by yabenman         ###   ########.fr        #
+#    Updated: 2025/01/02 23:00:33 by yabenman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,17 +22,11 @@ OBJ  = $(SRC:.c=.o)
 
 all : $(NAME) 
 
-CLR_RMV:= \033[0m
-RED:= \033[1;31m
-GREEN:= \033[1;32m
-YELLOW:= \033[1;33m
-BLUE:= \033[1;34m
-CYAN:= \033[1;36m
 
 
 $(NAME) : $(OBJ)
 	@$(CC) $(OBJ) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-	@echo "$(BLUE)Compilation of ${YELLOW}$(NAME)"
+	@echo "Compilation of $(NAME)"
 
 
 
@@ -41,10 +35,10 @@ $(NAME) : $(OBJ)
 
 clean :
 	@rm -rf $(OBJ)
-	@echo "$(RED)$(NAME) $(GREEN)OBJS DELETED ✔️"
+	@echo "$(NAME) OBJS DELETED ✔️"
 
 fclean : clean
 	@rm -rf $(NAME)
-	@echo "$(RED)$(NAME) $(GREEN)DELETED ✔️"
+	@echo "$(NAME) DELETED ✔️"
 
 re : fclean all

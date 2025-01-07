@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabenman <yabenman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:46:23 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/02 09:44:43 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/07 09:16:10 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ void	ft_init(t_fractol *fractol, int number)
 	fractol->image.pixels_ptr = mlx_get_data_addr(fractol->image.img_ptr,
 			&fractol->image.bits_per_pixel, &fractol->image.line_len,
 			&fractol->image.endian);
-	fractol->color = 0xff801;
-	fractol->color_code = 0;
+	fractol->color = 0xffffff;
 	fractol->julia = (number == 2);
 	fractol->var.a_r = -0.466;
 	fractol->var.b_r = 0.622;
@@ -54,7 +53,6 @@ int	main(int ac, char **av)
 			ft_init(&fractol, number);
 			ft_draw(fractol);
 			mlx_key_hook(fractol.window, ft_key_hook, &fractol);
-			mlx_mouse_hook(fractol.window, ft_mouse_hook, &fractol);
 			mlx_hook(fractol.window, 17, 0, ft_close, &fractol);
 			mlx_loop(fractol.cnx);
 		}
@@ -67,19 +65,17 @@ int	main(int ac, char **av)
 	write(1, "[1]:\tMandelbrot\n[2]:\tJulia\n", 47);
 	return (0);
 }
-#include <stdio.h>
+
 void	julia_args(char **av)
 {
-	t_fractol fractol;
+	t_fractol	fractol;
 
 	ft_instructions();
 	ft_init(&fractol, 2);
 	fractol.var.a_r = ft_atof(av[2], 0);
 	fractol.var.b_r = ft_atof(av[3], 0);
-	printf("ar_%f\n, br_%f\n",fractol.var.a_r, fractol.var.b_r);
 	ft_draw(fractol);
 	mlx_key_hook(fractol.window, ft_key_hook, &fractol);
-	mlx_mouse_hook(fractol.window, ft_mouse_hook, &fractol);
 	mlx_hook(fractol.window, 17, 0, ft_close, &fractol);
 	mlx_loop(fractol.cnx);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabenman <yabenman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:47:18 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/02 09:48:42 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/05 07:22:02 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ double	ft_map(int in, double min, double max)
 {
 	double	maped;
 
-	maped = in * ((max - min) / 600) + min;
+	maped = in * ((max - min) / WIDTH) + min;
 	return (maped);
 }
 
@@ -41,10 +41,6 @@ int	ft_close(t_fractol *fractol)
 void	ft_instructions(void)
 {
 	write(1, "####### INSTRUCTION BY YABENMAN  ########\n", 43);
-	write(1, "#                                       #\n", 43);
-	write(1, "#                                       #\n", 43);
-	write(1, "#               Zoom                    #\n", 43);
-	write(1, "# mouse buttons - Use them whith julia  #\n", 43);
 	write(1, "#                                       #\n", 43);
 	write(1, "# esc | q - Quit                        #\n", 43);
 	write(1, "#                                       #\n", 43);
