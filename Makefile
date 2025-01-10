@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yabenman <yabenman@student.42.fr>          +#+  +:+       +#+         #
+#    By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/01 02:33:32 by yabenman          #+#    #+#              #
-#    Updated: 2025/01/02 23:00:33 by yabenman         ###   ########.fr        #
+#    Updated: 2025/01/10 09:51:52 by yabenman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC	= src/control.c\
 	  src/draw.c\
 	  src/main.c\
 	  src/utils.c\
+	  src/event.c\
 
 OBJ  = $(SRC:.c=.o)
 

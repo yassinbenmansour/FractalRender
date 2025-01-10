@@ -6,7 +6,7 @@
 /*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:46:23 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/07 09:16:10 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/10 09:45:05 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ void	ft_init(t_fractol *fractol, int number)
 	fractol->image.pixels_ptr = mlx_get_data_addr(fractol->image.img_ptr,
 			&fractol->image.bits_per_pixel, &fractol->image.line_len,
 			&fractol->image.endian);
-	fractol->color = 0xffffff;
+	fractol->color = 0x00ffd9;
 	fractol->julia = (number == 2);
+	fractol->julia_move = 0;
 	fractol->var.a_r = -0.466;
 	fractol->var.b_r = 0.622;
 }
@@ -53,6 +54,7 @@ int	main(int ac, char **av)
 			ft_init(&fractol, number);
 			ft_draw(fractol);
 			mlx_key_hook(fractol.window, ft_key_hook, &fractol);
+			mlx_mouse_hook(fractol.window, ft_mouse_hook, &fractol);
 			mlx_hook(fractol.window, 17, 0, ft_close, &fractol);
 			mlx_loop(fractol.cnx);
 		}
@@ -76,6 +78,7 @@ void	julia_args(char **av)
 	fractol.var.b_r = ft_atof(av[3], 0);
 	ft_draw(fractol);
 	mlx_key_hook(fractol.window, ft_key_hook, &fractol);
+	mlx_mouse_hook(fractol.window, ft_mouse_hook, &fractol);
 	mlx_hook(fractol.window, 17, 0, ft_close, &fractol);
 	mlx_loop(fractol.cnx);
 }

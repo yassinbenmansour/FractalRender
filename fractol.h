@@ -6,7 +6,7 @@
 /*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:33:30 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/06 10:17:27 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/10 09:45:50 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_fractol
 	int		max_iteration;
 	int		color;
 	int		julia;
+	int		julia_move;
 }			t_fractol;
 
 void		ft_instructions(void);
@@ -66,5 +67,7 @@ void		ft_mlx_pixel_put(t_fractol fractol, int x, int y, int color);
 void		ft_draw(t_fractol fractol);
 int			ft_key_hook(int keycode, void *param);
 void		julia_args(char **av);
+void		ft_mouse_zoom(t_fractol *fractol, int button, int x, int y);
+int			ft_mouse_hook(int button, int x, int y, void *param);
 
 #endif

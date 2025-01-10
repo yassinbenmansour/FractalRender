@@ -6,7 +6,7 @@
 /*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:47:10 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/05 07:19:07 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/10 09:46:35 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_key_hook(int keycode, void *param)
 	t_fractol	*fractol;
 
 	fractol = param;
-	(void ) fractol;
+	(void)fractol;
 	if (keycode == 53 || keycode == 12)
 		exit(0);
 	return (0);
