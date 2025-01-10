@@ -6,7 +6,7 @@
 /*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 09:50:45 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/10 09:51:06 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/10 10:14:46 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	ft_mouse_hook(int button, int x, int y, void *param)
 		ft_mouse_zoom(fractol, button, x, y);
 		ft_draw(*fractol);
 	}
-	else if (button == 1 && fractol->julia)
-		fractol->julia_move = !fractol->julia_move;
+	
 	return (0);
 }

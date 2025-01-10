@@ -6,7 +6,7 @@
 /*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:46:23 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/10 09:45:05 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/10 10:15:14 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	ft_init(t_fractol *fractol, int number)
 			&fractol->image.endian);
 	fractol->color = 0x00ffd9;
 	fractol->julia = (number == 2);
-	fractol->julia_move = 0;
 	fractol->var.a_r = -0.466;
 	fractol->var.b_r = 0.622;
 }

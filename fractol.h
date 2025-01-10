@@ -6,7 +6,7 @@
 /*   By: yabenman <yabenman@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 02:33:30 by yabenman          #+#    #+#             */
-/*   Updated: 2025/01/10 09:45:50 by yabenman         ###   ########.fr       */
+/*   Updated: 2025/01/10 10:14:57 by yabenman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ typedef struct s_fractol
 	int		max_iteration;
 	int		color;
 	int		julia;
-	int		julia_move;
 }			t_fractol;
 
 void		ft_instructions(void);
